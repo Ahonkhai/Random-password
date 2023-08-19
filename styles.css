@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-color);
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--secondary-color);
+}
+
+header{
+    padding: 20px;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header span{
+    font-weight: bold;
+    font-size: 30px;
+    transform: translateX(7px);
+    color: var(--secondary-color);
+    transition: color 120ms ease-in-out;
+}
+
+header span:hover{
+    color: rgb(166, 118, 255);
+}
+
+.theme{
+    padding: 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(90%);
+}
+
+#Light{
+    width: 50px;
+    cursor: pointer;
+    transform: translateY(10px);
+    margin-bottom: -150px;
+    transition: transform 0.5s ease-in-out;
+}
+
+
+:root{
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+}
+
+.dark-theme{
+    --primary-color: #151515;
+    --secondary-color: #ffffff;
+}
+
+#container{
+    margin: 12%;
+    width: 90%;
+    max-width: 700px;
+}
+
+#container2{
+    margin: 12%;
+    width: 90%;
+    max-width: 700px;
+    transform: translateY(-150%);
+}
+
+#inputEl{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+#inputEl input{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 20x;
+    outline: none;
+}
+
+#submitEl{
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 0px 10px;
+    color: var(--primary-color);
+    background-color: rgb(164, 114, 255);
+    transform: translateX(10px);
+    transition: background-color 120ms ease-in-out;
+}
+
+#submitEl:hover{
+    background-color: rgb(132, 93, 204);
+    cursor: pointer;
+}
+#submitEl2{
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 0px 10px;
+    color: var(--primary-color);
+    background-color: rgb(164, 114, 255);
+    transform: translateX(10px);
+    transition: background-color 120ms ease-in-out;
+}
+
+#submitEl2:hover{
+    filter: brightness(0.85);
+    cursor: pointer;
+}
+
+#password, #color{
+    color: var(--secondary-color);
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 768px) {
+    /* Adjust the font size for better readability on smaller screens */
+    * {
+      font-size: 15px;
+    }
+
+    header{
+        font-size: 17px;
+    }
+
+    header span{
+        font-size: 17px;
+    }
+
+    #Light{
+        width: 30px;
+        position: relative;
+        bottom: 30px;
+    }
+  
+    /* Adjust the margin and width of #container for better layout on smaller screens */
+    #container,
+    #container2 {
+      margin: 5%;
+      width: 90%;
+    }
+  
+    /* Adjust the transform property of #container2 to move it upward on smaller screens */
+    #container2 {
+      transform: translateY(-20%);
+    }
+  }
+  
+  /* Tablets and larger devices */
+  @media only screen and (min-width: 769px) {
+    /* Reset font size back to 20px for larger screens */
+    * {
+      font-size: 20px;
+    }
+  
+    /* Reset margin and width of #container for larger screens */
+    #container,
+    #container2 {
+      margin: 12%;
+      width: 90%;
+    }
+  
+    /* Reset the transform property of #container2 for larger screens */
+    #container2 {
+      transform: translateY(-150%);
+    }
+  }

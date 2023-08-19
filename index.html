@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator </title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <section class="theme">
+        <nav>
+        </nav>
+            <div>
+                <img onclick="Light()" id="Light" src="Dark.png" alt="light theme" title="change theme" >
+            </div>
+            <!--<div>
+                <img id="Dark" src="Dark.png" alt="Dark theme" title="Dark theme" width="5%">
+            </div> -->
+    </section>
+    <section class="Password_Generator">
+        <Div id = "container">
+            <header>
+                Generate Random <span>Password</span>
+            </header>
+            <div id="inputEl">
+                <div>
+                    <input type="text" id="Password" placeholder="password">
+                </div>
+                <div>
+                    <button onclick="generate()" id="submitEl" type="submit">Generate</button>
+                </div>
+            </div>
+        </Div>
+        <div id = "yes">     
+        </div>
+    </section>
+    <section class="color generator">
+        <Div id = "container2">
+            <header>
+                Generate Random <span id="color_text">Color</span>
+            </header>
+            <div id="inputEl">
+                <div>
+                    <input type="text" id="color" placeholder="color">
+                </div>
+                <div>
+                    <button onclick="color()" id="submitEl2" type="submit">Generate</button>
+                </div>
+            </div>
+        </Div>
+        <div id = "yes">     
+        </div>
+    </section>
+    
+</body>
+</html>
+
+
