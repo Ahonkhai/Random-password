@@ -51,8 +51,12 @@ function getCSSVariableValue(root) {
   console.log('Primary Color:', primaryColor); 
   console.log('Secondary Color:', secondaryColor); 
   
+
 var dark;
 var rotated;
+
+var dark = !dark;
+var rotated = !rotated;
 
 
 
