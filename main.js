@@ -52,13 +52,14 @@ function getCSSVariableValue(root) {
   console.log('Secondary Color:', secondaryColor); 
   
 
+
 var dark;
 var rotated;
 
 
 function Light() {
     document.body.classList.toggle("dark-theme");
-    dark = !dark;
+    dark = true;
 
     if (dark) {
       LightEl.src = "Light.png";
@@ -68,7 +69,7 @@ function Light() {
 
     if (rotated) {
       LightEl.style.transform = "rotate(40deg)";
-      rotated = !rotated;
+      rotated = false;
     }
     else {
       LightEl.style.transform = "rotate(0deg)";
