@@ -55,10 +55,6 @@ function getCSSVariableValue(root) {
 var dark;
 var rotated;
 
-var dark = !dark;
-var rotated = !rotated;
-
-
 
 function Light() {
     document.body.classList.toggle("dark-theme");
