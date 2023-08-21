@@ -58,9 +58,9 @@ var rotated = false
 
 function Light() {
     document.body.classList.toggle("dark-theme");
-    dark = true;
+    dark = !dark;
 
-    if (dark = true) {
+    if (dark) {
       LightEl.src = "Light.png";
     } else {
       LightEl.src = "Dark.png"; 
