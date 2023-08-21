@@ -105,6 +105,9 @@ function color() {
     if (dark == true) {
         color_text.addEventListener("mouseout", new_color);
     }
+    else {
+        color_text.addEventListener("mouseout", old_color);
+    }
 
     submitEl2.style.backgroundColor = color;
     colorEl.value = color;
