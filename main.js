@@ -12,21 +12,40 @@ var Uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var number = "0123456789";
 var symbols = "!@#$%^&*()_+";
 
-var characters = Lowercase + Uppercase + number;
+var characters = Lowercase + Uppercase + number + symbols;
+
+// Pick a random index using the browser's cryptographically secure generator.
+// Math.random() is predictable and should not be used for passwords.
+function secureRandomIndex(max) {
+    var limit = Math.floor(0x100000000 / max) * max; // avoid modulo bias
+    var buf = new Uint32Array(1);
+    do {
+        crypto.getRandomValues(buf);
+    } while (buf[0] >= limit);
+    return buf[0] % max;
+}
+
+function pick(set) {
+    return set[secureRandomIndex(set.length)];
+}
 
 function generate() {
-    var password = "";
-    password += Lowercase[Math.floor(Math.random() * Lowercase.length)];
-    password += Uppercase[Math.floor(Math.random() * Uppercase.length)];
-    password += number[Math.floor(Math.random() * number.length)];
-    password += symbols[Math.floor(Math.random() * symbols.length)];
+    // Guarantee at least one character from each set...
+    var chars = [pick(Lowercase), pick(Uppercase), pick(number), pick(symbols)];
 
-    while(length > password.length) {
-        password += characters[Math.floor(Math.random() * characters.length)];
+    while (chars.length < length) {
+        chars.push(pick(characters));
     }
 
-    passwordEL.value = password;
+    // ...then shuffle so the guaranteed characters aren't always first.
+    for (var i = chars.length - 1; i > 0; i--) {
+        var j = secureRandomIndex(i + 1);
+        var tmp = chars[i]; chars[i] = chars[j]; chars[j] = tmp;
+    }
+
+    passwordEL.value = chars.join("");
 }
+
 
 //function copyPassword() {
 //    passwordEL.select();
