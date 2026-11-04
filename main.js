@@ -47,11 +47,23 @@ function generate() {
 }
 
 
-//function copyPassword() {
-//    passwordEL.select();
-//    document.execCommand("copy");
-//   alert("Password copied to clipboard!");
-//}
+var copyEl = document.querySelector("#copyEl");
+
+async function copyPassword() {
+    if (!passwordEL.value) {
+        return;
+    }
+    try {
+        await navigator.clipboard.writeText(passwordEL.value);
+        copyEl.textContent = "Copied!";
+    } catch (err) {
+        // The Clipboard API can be blocked (e.g. on http://); fall back to selecting the text.
+        passwordEL.select();
+        copyEl.textContent = "Press Ctrl+C";
+    }
+    setTimeout(function () { copyEl.textContent = "Copy"; }, 1500);
+}
+
 
 var LightEl = document.querySelector("#Light")
 var colorEl = document.querySelector("#color");
