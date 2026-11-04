@@ -75,13 +75,15 @@ header span:hover{
     transform: translateY(-150%);
 }
 
-#inputEl{
+.inputEl{
+
     display: flex;
     align-items: center;
     justify-content: center; 
 }
 
-#inputEl input{
+.inputEl input{
+
     width: 100%;
     height: 50px;
     border: 1px solid #ccc;
